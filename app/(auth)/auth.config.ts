@@ -2,7 +2,7 @@ import { NextAuthConfig } from "next-auth";
 
 export const authConfig = {
   pages: {
-    signIn: "/login",
+    signIn: "/",
     newUser: "/",
   },
   providers: [

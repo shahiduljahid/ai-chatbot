@@ -24,15 +24,16 @@ import { Textarea } from '../ui/textarea';
 
 const suggestedActions = [
   {
-    title: 'What is the weather',
-    label: 'in San Francisco?',
-    action: 'What is the weather in San Francisco?',
-  },
-  {
-    title: 'Help me draft an essay',
-    label: 'about Silicon Valley',
-    action: 'Help me draft an essay about Silicon Valley',
-  },
+    title: 'What is the sentiment',
+    label: 'for "The weather in San Francisco is amazing today!"',
+    action: 'Determine if the sentiment for "The weather in San Francisco is amazing today!" is positive, negative, or neutral.',
+},
+{
+    title: 'Analyze the mood',
+    label: 'for "Silicon Valley has become too expensive to live in."',
+    action: 'Analyze the mood of the comment "Silicon Valley has become too expensive to live in." as positive, negative, or neutral.',
+},
+
 ];
 
 export function MultimodalInput({
@@ -203,7 +204,7 @@ export function MultimodalInput({
                       content: suggestedAction.action,
                     });
                   }}
-                  className="text-left border rounded-xl px-4 py-3.5 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start"
+                  className="text-left border rounded-xl px-4 py-3.5 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start whitespace-normal break-words"
                 >
                   <span className="font-medium">{suggestedAction.title}</span>
                   <span className="text-muted-foreground">
@@ -290,7 +291,7 @@ export function MultimodalInput({
           <ArrowUpIcon size={14} />
         </Button>
       )}
-
+{/* 
       <Button
         className="rounded-full p-1.5 h-fit absolute bottom-2 right-10 m-0.5 dark:border-zinc-700"
         onClick={(event) => {
@@ -301,7 +302,7 @@ export function MultimodalInput({
         disabled={isLoading}
       >
         <PaperclipIcon size={14} />
-      </Button>
+      </Button> */}
     </div>
   );
 }

@@ -39,7 +39,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               onClick={() => setOpenMobile(false)}
               className="flex flex-row gap-3 items-center"
             >
-              <span className="text-lg font-semibold px-2">Chatbot</span>
+              <span className="text-lg font-semibold px-2 text-gradient-2">Ask Anything</span>
             </Link>
             <BetterTooltip content="New Chat" align="start">
               <Button variant="ghost" className="p-2 h-fit">
@@ -59,7 +59,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
       <SidebarFooter className="gap-0">
         <SidebarGroup>
           <SidebarGroupContent>
-            <Card className="p-4 flex flex-col gap-4 relative rounded-lg shadow-none border-none">
+            {/* <Card className="p-4 flex flex-col gap-4 relative rounded-lg shadow-none border-none">
               <a
                 href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot&env=AUTH_SECRET,OPENAI_API_KEY&envDescription=Learn%20more%20about%20how%20to%20get%20the%20API%20Keys%20for%20the%20application&envLink=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&demo-title=AI%20Chatbot&demo-description=An%20Open-Source%20AI%20Chatbot%20Template%20Built%20With%20Next.js%20and%20the%20AI%20SDK%20by%20Vercel.&demo-url=https%3A%2F%2Fchat.vercel.ai&stores=[{%22type%22:%22postgres%22},{%22type%22:%22blob%22}]"
                 className="absolute inset-0 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring"
@@ -81,7 +81,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
                   Deploy with Vercel
                 </Button>
               </CardFooter>
-            </Card>
+            </Card> */}
           </SidebarGroupContent>
         </SidebarGroup>
         {user && (

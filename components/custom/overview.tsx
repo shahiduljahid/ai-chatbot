@@ -1,9 +1,24 @@
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import lottie from 'lottie-web';
+import { useEffect, useRef } from 'react';
 
-import { MessageIcon, VercelIcon } from './icons';
+import { MessageIcon, BrainstormIcon } from './icons';
 
 export const Overview = () => {
+  const animationContainer = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (animationContainer.current) {
+      lottie.loadAnimation({
+        container: animationContainer.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'https://gcore.jsdelivr.net/gh/AI-QL/chat-ui/lottie.json',
+      });
+    }
+  }, []);
+
   return (
     <motion.div
       key="overview"
@@ -13,39 +28,32 @@ export const Overview = () => {
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ delay: 0.5 }}
     >
-      <div className="rounded-xl p-6 flex flex-col gap-8 leading-relaxed text-center max-w-xl">
+      <div 
+        className="rounded-xl p-6 flex flex-col gap-2 leading-relaxed text-center max-w-xl "
+        
+      >
         <p className="flex flex-row justify-center gap-4 items-center">
-          <VercelIcon size={32} />
+          <BrainstormIcon />
           <span>+</span>
           <MessageIcon size={32} />
         </p>
-        <p>
-          This is an{' '}
-          <Link
-            className="font-medium underline underline-offset-4"
-            href="https://github.com/vercel/ai-chatbot"
-            target="_blank"
-          >
-            open source
-          </Link>{' '}
-          chatbot template built with Next.js and the AI SDK by Vercel. It uses
-          the{' '}
-          <code className="rounded-md bg-muted px-1 py-0.5">streamText</code>{' '}
-          function in the server and the{' '}
-          <code className="rounded-md bg-muted px-1 py-0.5">useChat</code> hook
-          on the client to create a seamless chat experience.
-        </p>
-        <p>
-          You can learn more about the AI SDK by visiting the{' '}
-          <Link
-            className="font-medium underline underline-offset-4"
-            href="https://sdk.vercel.ai/docs"
-            target="_blank"
-          >
-            docs
-          </Link>
-          .
-        </p>
+        <div className="p-2">
+  <h1 className="text-xl sm:text-2xl font-bold mb-1">
+    🌟{' '}
+    <span className="text-gradient-2">
+      Welcome to Our NLP Chatbot!
+    </span>{' '}
+    🌟
+  </h1>
+  <p className="text-sm sm:text-base text-muted-foreground mb-2">
+    Engage in a conversation about various NLP tasks, including{' '}
+    <span className="font-semibold">Sentiment Analysis</span>,{' '}
+    <span className="font-semibold">Named Entity Recognition</span>, and{' '}
+    <span className="font-semibold">Question Answering</span>! 🤖💬
+  </p>
+  <div id="lottie" ref={animationContainer}></div>
+</div>
+
       </div>
     </motion.div>
   );

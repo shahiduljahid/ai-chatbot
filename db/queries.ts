@@ -13,6 +13,7 @@ import { user, chat, User, document, Suggestion } from "./schema";
 let client = postgres(`${process.env.POSTGRES_URL!}?sslmode=require`);
 let db = drizzle(client);
 
+
 export async function getUser(email: string): Promise<Array<User>> {
   try {
     return await db.select().from(user).where(eq(user.email, email));
@@ -27,6 +28,7 @@ export async function createUser(email: string, password: string) {
   let hash = hashSync(password, salt);
 
   try {
+    console.log(email,password)
     return await db.insert(user).values({ email, password: hash });
   } catch (error) {
     console.error("Failed to create user in database");

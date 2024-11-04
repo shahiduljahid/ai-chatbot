@@ -144,3 +144,16 @@
 .suggestion-highlight {
   @apply bg-yellow-100 hover:bg-yellow-200 dark:hover:bg-yellow-400/50 dark:text-yellow-50 dark:bg-yellow-400/40;
 }
+
+.text-gradient-2 {
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90.22deg,#58ebff .19%,#e6f85e 101.84%);
+  background-clip: text;
+  -webkit-background-clip: text
+}
+#lottie {
+  height: calc(30vh - 50px);
+  max-height: calc(100% - 100px);
+}
+
